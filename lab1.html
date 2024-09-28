@@ -3,18 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 1 - Website</title>
+    <title>Lab 1 - User Registration Form</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Basic styling for form and elements */
+        /* Lab Page Specific Styles */
+        body.lab-page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full viewport height */
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient */
+        }
+
         .container {
             max-width: 600px; /* Center the form */
-            margin: 20px auto; /* Centering */
+            margin: 40px auto; /* Centering */
             padding: 20px;
             background: #ffffff; /* White background */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Box shadow */
             border-radius: 10px; /* Rounded corners */
+            transition: transform 0.3s ease;
         }
+
+        .container:hover {
+            transform: translateY(-5px); /* Gentle lift on hover */
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+            color: #2c3e50;
+        }
+
         input, select, button {
             width: 100%; /* Full width */
             padding: 10px;
@@ -22,28 +48,92 @@
             border: 1px solid #ccc; /* Border */
             border-radius: 5px; /* Rounded corners */
             box-sizing: border-box; /* Include padding in width */
+            transition: border-color 0.3s ease;
         }
+
+        input:focus, select:focus {
+            border-color: #16a085; /* Change border color on focus */
+        }
+
         button {
             background-color: #2c3e50; /* Button color */
             color: white; /* Text color */
             cursor: pointer; /* Pointer on hover */
             border: none; /* No border */
+            transition: background-color 0.3s ease;
         }
+
+        button:hover {
+            background-color: #1abc9c; /* Change button color on hover */
+        }
+
         button:disabled {
             background-color: #ccc; /* Disabled button color */
             cursor: not-allowed; /* Not allowed cursor */
         }
+
         .preview {
             max-width: 150px; /* Image preview size */
             margin: 10px 0; /* Space above and below */
+            display: none; /* Hide preview by default */
         }
+
         .error {
             color: red; /* Error text color */
             font-size: 0.9em; /* Smaller font */
         }
+
+        /* Labs Section */
+        .labs {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .labs h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .labs ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .labs li {
+            background: #16a085;
+            border-radius: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .labs li:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .labs a {
+            padding: 15px 25px;
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            border-radius: 30px; /* Consistent rounded shape */
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
-<body>
+<body class="lab-page">
     <header>
         <nav>
             <a href="index.html">Home</a>
@@ -147,57 +237,49 @@
             document.getElementById('roleError').textContent = '';
             document.getElementById('pictureError').textContent = '';
 
-            // Username validation
-            if (usernameInput.value.length < 1) {
-                document.getElementById('usernameError').textContent = 'Username is required.';
+            if (usernameInput.value.length < 4) {
+                document.getElementById('usernameError').textContent = 'Username must be at least 4 characters.';
                 isValid = false;
             }
 
-            // Password validation
             if (passwordInput.value.length < 6) {
-                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters.';
                 isValid = false;
             }
 
-            // Email validation
-            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-            if (!emailInput.value.match(emailPattern)) {
+            if (!validateEmail(emailInput.value)) {
                 document.getElementById('emailError').textContent = 'Invalid email format.';
                 isValid = false;
             }
 
-            // Role validation
             if (roleSelect.value === '') {
-                document.getElementById('roleError').textContent = 'Role is required.';
+                document.getElementById('roleError').textContent = 'Please select a role.';
                 isValid = false;
             }
 
-            // Profile picture validation
-            if (profilePictureInput.value.length < 1) {
-                document.getElementById('pictureError').textContent = 'Profile picture is required.';
-                isValid = false;
-            }
-
+            // Enable or disable the create account button
             createAccountBtn.disabled = !isValid;
         }
 
-        // Add event listeners for validation
+        // Simple email validation function
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // Event listeners for inputs
         usernameInput.addEventListener('input', validateForm);
         passwordInput.addEventListener('input', validateForm);
         emailInput.addEventListener('input', validateForm);
         roleSelect.addEventListener('change', validateForm);
-        profilePictureInput.addEventListener('input', validateForm);
 
-        // Preview the uploaded image
-        profilePictureInput.addEventListener('input', function () {
-            const imageUrl = profilePictureInput.value;
+        // Image upload functionality (mock example)
+        document.getElementById('uploadButton').addEventListener('click', function () {
+            const url = profilePictureInput.value;
             const imagePreview = document.getElementById('imagePreview');
-            imagePreview.src = imageUrl;
-            imagePreview.style.display = imageUrl ? 'block' : 'none'; // Show/Hide preview
+            imagePreview.src = url;
+            imagePreview.style.display = url ? 'block' : 'none';
         });
-
-        // Initial validation check
-        validateForm();
     </script>
 </body>
 </html>
