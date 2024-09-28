@@ -1,33 +1,31 @@
 /* Global Styles */
 html, body {
-    height: 100%; /* Ensure full height for positioning */
+    height: 100%;
     margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(135deg, #f0f2f5, #dfe4ea);
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient */
     color: #333;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Header */
 header {
-    background: #2c3e50;
+    background: #2c3e50; /* Darker shade for contrast */
     color: #ecf0f1;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Softer shadow */
 }
 
 header h1 {
     margin: 0;
     font-size: 3em;
-    letter-spacing: 1.5px;
     font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* Navigation Bar */
@@ -41,63 +39,86 @@ nav {
 nav a {
     color: #ecf0f1;
     text-decoration: none;
-    padding: 15px 25px;
+    padding: 15px 20px;
     margin: 0 10px;
-    transition: background 0.4s ease, transform 0.3s ease;
-    border-radius: 5px;
+    border-radius: 30px; /* Rounded buttons for a modern look */
+    transition: all 0.4s ease;
 }
 
 nav a:hover {
-    background: #16a085;
+    background: #1abc9c;
     color: #fff;
-    transform: scale(1.05);
+    transform: translateY(-2px); /* Gentle lift effect */
 }
 
-/* Main Content Styles */
+/* Active Tab Styling */
+nav a.active, .labs a.active {
+    background: #ffffff;
+    color: #2c3e50;
+    font-weight: bold;
+    border: 2px solid #16a085;
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.3); /* Soft shadow */
+    cursor:cell;
+    transform: none;
+}
+
+/* Main Content Container */
 .container {
-    flex: 1; /* Allow main content to grow */
-    width: 80%;
+    width: 70%;
+    max-width: 1200px;
     margin: 30px auto;
     padding: 30px;
     background: #ffffff;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Softer shadow */
     border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px); /* Gentle lift on hover */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
 /* Labs Section */
 .labs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+    margin: 40px 0;
+    text-align: center;
 }
 
+.labs h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Lab Tabs */
 .labs ul {
     list-style: none;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
 .labs li {
-    margin: 15px;
-    background: #1abc9c;
-    border-radius: 10px;
+    background: #16a085;
+    border-radius: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .labs li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .labs a {
-    color: white;
     padding: 15px 25px;
+    color: #ffffff;
     text-decoration: none;
     display: block;
     text-align: center;
+    border-radius: 30px; /* Consistent rounded shape */
 }
 
 /* Footer */
@@ -112,7 +133,7 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     nav a {
@@ -125,49 +146,75 @@ footer {
         padding: 20px;
     }
 
-    h1, h2, h3 {
-        font-size: 1.5em;
-    }
-
     .labs ul {
         flex-direction: column;
+        gap: 10px; /* Reduce space between items */
     }
 }
-nav a.active {
-    background: #16a085; /* Background color when active */
-    color: #ffffff; /* Text color when active */
-    font-weight: bold; /* Make text bold for emphasis */
-    border-radius: 5px; /* Rounded corners for the active link */
-    transition: background 0.3s ease, transform 0.3s ease; /* Transition for smoothness */
+/* Lab Page Specific Styles */
+body.lab-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
 }
 
-nav a.active:hover {
+.container.lab-content {
+    flex: 1; /* Take up remaining space */
+}
+
+footer.lab-footer {
+    margin-top: auto; /* Push footer to the bottom */
+}
+/* Home Page Specific Styles */
+.hero {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    background: #16a085; /* Match the Labs tab color */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
     background: #1abc9c; /* Slightly lighter on hover */
 }
-.lab-nav {
-    display: flex; /* Aligns the links horizontally */
-    justify-content: center; /* Centers the links */
-    margin: 20px 0; /* Adds space above and below the lab links */
+
+.features {
+    margin: 40px 0;
 }
 
-.lab-nav a {
-    background: #34495e; /* Default background */
-    color: #ecf0f1; /* Default text color */
-    text-decoration: none; /* Removes underline */
-    padding: 10px 15px; /* Adds padding */
-    margin: 0 10px; /* Adds space between links */
-    border-radius: 5px; /* Rounds the corners */
-    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+.feature-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
-.lab-nav a:hover {
-    background: #16a085; /* Background color on hover */
-    color: #ffffff; /* Text color on hover */
+.feature-item {
+    background: #f5f7fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Adjust based on your layout */
+    text-align: center;
 }
 
-.lab-nav a.active {
-    background: #16a085; /* Background color when active */
-    color: #ffffff; /* Text color when active */
-    font-weight: bold; /* Make text bold for emphasis */
+.cta {
+    text-align: center;
+    margin: 40px 0;
 }
 
