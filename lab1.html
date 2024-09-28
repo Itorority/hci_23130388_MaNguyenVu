@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1 - Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling for form and elements */
+        .container {
+            max-width: 600px; /* Center the form */
+            margin: 20px auto; /* Centering */
+            padding: 20px;
+            background: #ffffff; /* White background */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Box shadow */
+            border-radius: 10px; /* Rounded corners */
+        }
+        input, select, button {
+            width: 100%; /* Full width */
+            padding: 10px;
+            margin: 10px 0; /* Space between inputs */
+            border: 1px solid #ccc; /* Border */
+            border-radius: 5px; /* Rounded corners */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        button {
+            background-color: #2c3e50; /* Button color */
+            color: white; /* Text color */
+            cursor: pointer; /* Pointer on hover */
+            border: none; /* No border */
+        }
+        button:disabled {
+            background-color: #ccc; /* Disabled button color */
+            cursor: not-allowed; /* Not allowed cursor */
+        }
+        .preview {
+            max-width: 150px; /* Image preview size */
+            margin: 10px 0; /* Space above and below */
+        }
+        .error {
+            color: red; /* Error text color */
+            font-size: 0.9em; /* Smaller font */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="labs.html" class="active">Labs</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Lab 1: User Registration Form</h1>
+        
+        <form id="registrationForm">
+            <!-- Username Input -->
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username." required>
+            <span class="error" id="usernameError"></span>
+
+            <!-- Password Input -->
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password." required>
+            <button type="button" id="togglePassword">Show</button>
+            <span class="error" id="passwordError"></span>
+
+            <!-- Email Input -->
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email." required>
+            <span class="error" id="emailError"></span>
+
+            <!-- Full Name Input (Optional) -->
+            <label for="fullName">Full Name (Optional)</label>
+            <input type="text" id="fullName" placeholder="Enter your full name.">
+
+            <!-- Role Dropdown -->
+            <label for="role">Role</label>
+            <select id="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <!-- Additional roles can be added here -->
+            </select>
+            <span class="error" id="roleError"></span>
+
+            <!-- Profile Picture Input -->
+            <label for="profilePicture">Profile Picture</label>
+            <input type="url" id="profilePicture" placeholder="Enter image URL or upload." required>
+            <button type="button" id="uploadButton">Upload Image</button>
+            <img id="imagePreview" class="preview" src="" alt="Image Preview" />
+            <span class="error" id="pictureError"></span>
+
+            <!-- Account Created At (Read-only) -->
+            <label for="accountCreatedAt">Account Created At</label>
+            <input type="text" id="accountCreatedAt" readonly value="2024-09-28 12:00:00">
+
+            <!-- Last Updated At (Read-only) -->
+            <label for="lastUpdatedAt">Last Updated At</label>
+            <input type="text" id="lastUpdatedAt" readonly value="2024-09-28 12:00:00">
+
+            <!-- Create Account Button -->
+            <button type="submit" id="createAccountBtn" disabled>Create Account</button>
+            <!-- Optional Cancel Button -->
+            <button type="button" onclick="window.history.back();">Cancel</button>
+        </form>
+    </main>
+
+    <section class="labs">
+        <h2>Other Labs</h2>
+        <ul>
+            <li><a href="lab1.html" class="active">Lab 1</a></li>
+            <li><a href="lab2.html">Lab 2</a></li>
+            <li><a href="lab3.html">Lab 3</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 itorority. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const emailInput = document.getElementById('email');
+        const roleSelect = document.getElementById('role');
+        const profilePictureInput = document.getElementById('profilePicture');
+        const createAccountBtn = document.getElementById('createAccountBtn');
+
+        // Show/Hide password functionality
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.textContent = type === 'password' ? 'Show' : 'Hide';
+        });
+
+        // Form validation
+        function validateForm() {
+            let isValid = true;
+
+            // Reset error messages
+            document.getElementById('usernameError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('roleError').textContent = '';
+            document.getElementById('pictureError').textContent = '';
+
+            // Username validation
+            if (usernameInput.value.length < 1) {
+                document.getElementById('usernameError').textContent = 'Username is required.';
+                isValid = false;
+            }
+
+            // Password validation
+            if (passwordInput.value.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
+                isValid = false;
+            }
+
+            // Email validation
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!emailInput.value.match(emailPattern)) {
+                document.getElementById('emailError').textContent = 'Invalid email format.';
+                isValid = false;
+            }
+
+            // Role validation
+            if (roleSelect.value === '') {
+                document.getElementById('roleError').textContent = 'Role is required.';
+                isValid = false;
+            }
+
+            // Profile picture validation
+            if (profilePictureInput.value.length < 1) {
+                document.getElementById('pictureError').textContent = 'Profile picture is required.';
+                isValid = false;
+            }
+
+            createAccountBtn.disabled = !isValid;
+        }
+
+        // Add event listeners for validation
+        usernameInput.addEventListener('input', validateForm);
+        passwordInput.addEventListener('input', validateForm);
+        emailInput.addEventListener('input', validateForm);
+        roleSelect.addEventListener('change', validateForm);
+        profilePictureInput.addEventListener('input', validateForm);
+
+        // Preview the uploaded image
+        profilePictureInput.addEventListener('input', function () {
+            const imageUrl = profilePictureInput.value;
+            const imagePreview = document.getElementById('imagePreview');
+            imagePreview.src = imageUrl;
+            imagePreview.style.display = imageUrl ? 'block' : 'none'; // Show/Hide preview
+        });
+
+        // Initial validation check
+        validateForm();
+    </script>
+</body>
+</html>
