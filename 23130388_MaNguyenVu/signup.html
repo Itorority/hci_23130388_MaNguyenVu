@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Programming Exercises</title>
+    <style>
+        /* Global Styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em; /* Size of the title */
+            letter-spacing: 1px; /* Space between letters for a refined look */
+        }
+
+        /* Main Content Container */
+        .container {
+            width: 100%;
+            max-width: 400px; /* Narrower container */
+            margin: 50px auto;
+            padding: 30px; /* Reduced padding */
+            background-color: #ffffff; /* Clean white background */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px); /* Lift on hover */
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+        }
+
+        .signup-container {
+            text-align: left;
+        }
+
+        .input-group {
+            margin-bottom: 20px; /* Adjusted margin for spacing */
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 1em;
+            color: #34495e; /* Darker text for contrast */
+            margin-bottom: 8px; /* More space below the label */
+        }
+
+        .input-group input {
+            width: 90%; /* Shortened input fields */
+            max-width: 350px; /* Maximum width for input fields */
+            padding: 12px;
+            border: 1px solid #ddd; /* Subtle border */
+            border-radius: 8px; /* Rounded input fields */
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inset shadow */
+            margin: 0 auto; /* Center input fields */
+        }
+
+        .input-group input:focus {
+            border-color: #16a085; /* Focus border color */
+            outline: none; /* Remove outline */
+            box-shadow: 0 0 5px rgba(22, 160, 133, 0.5); /* Focus shadow effect */
+        }
+
+        .btn {
+            display: block;
+            width: 90%; /* Button width */
+            max-width: 350px; /* Max width for button */
+            padding: 12px;
+            background-color: #16a085; /* Button color */
+            color: white; /* Button text color */
+            border: none; /* Remove border */
+            border-radius: 8px; /* Rounded button */
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft button shadow */
+            margin: 0 auto; /* Center button */
+        }
+
+        .btn:hover {
+            background-color: #1abc9c; /* Button hover color */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        .links {
+            margin-top: 15px;
+            font-size: 0.9em; /* Smaller font for links */
+        }
+
+        .links a {
+            color: #16a085; /* Link color */
+            text-decoration: none; /* Remove underline */
+            transition: color 0.3s ease;
+        }
+
+        .links a:hover {
+            color: #1abc9c; /* Link hover color */
+        }
+
+        /* Footer */
+        footer {
+            background: #34495e; /* Match header color */
+            color: #ecf0f1;
+            text-align: center;
+            padding: 15px; /* Reduced padding */
+            border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px; /* Adjust padding for smaller screens */
+            }
+
+            header h1 {
+                font-size: 1.5em; /* Smaller title on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Sign Up</h1>
+        </header>
+
+        <div class="signup-container">
+            <form action="register.php" method="post" onsubmit="return validatePasswords();">
+                <div class="input-group">
+                    <label for="new-username">Username</label>
+                    <input type="text" id="new-username" name="username" placeholder="Enter your username" required aria-label="Username">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required aria-label="Email">
+                </div>
+                <div class="input-group">
+                    <label for="new-password">Password</label>
+                    <input type="password" id="new-password" name="password" placeholder="Enter your password" required aria-label="Password">
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required aria-label="Confirm Password">
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p class="links"><a href="../lab2.html">Already have an account? Login here</a></p>
+            </form>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Programming Exercises Platform. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function validatePasswords() {
+            const password = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Exercises Platform</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Programming Exercises Platform</h1>
+            <input type="text" id="search-bar" placeholder="Search exercises..." aria-label="Search exercises">
+        </header>
+
+        <div class="content">
+            <!-- Exercise List Section -->
+            <aside class="exercise-list">
+                <h2>Exercises</h2>
+                <div class="filter-container">
+                    <label for="language-select">Filter by Language:</label>
+                    <select id="language-select">
+                        <option value="all">All</option>
+                        <option value="c">C</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                    </select>
+                </div>
+                <ul>
+                    <!-- Exercise items with status indication -->
+                    <li class="exercise-item" data-language="python" data-status="not-started">
+                        <h3>Exercise 1: Basic Python</h3>
+                        <p class="status-indicator not-started">Status: Not Started</p>
+                        <p>Short description of Exercise 1.</p>
+                        <p>Difficulty: Easy | Time limit: 30 min | Points: 10</p>
+                        <button class="select-exercise">Select</button>
+                    </li>
+                    <li class="exercise-item" data-language="java" data-status="in-progress">
+                        <h3>Exercise 2: Java Basics</h3>
+                        <p class="status-indicator in-progress">Status: In Progress</p>
+                        <p>Short description of Exercise 2.</p>
+                        <p>Difficulty: Medium | Time limit: 45 min | Points: 20</p>
+                        <button class="select-exercise">Select</button>
+                    </li>
+                    <li class="exercise-item" data-language="c" data-status="completed">
+                        <h3>Exercise 3: C Fundamentals</h3>
+                        <p class="status-indicator completed">Status: Completed</p>
+                        <p>Short description of Exercise 3.</p>
+                        <p>Difficulty: Hard | Time limit: 60 min | Points: 30</p>
+                        <button class="select-exercise">Select</button>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Code Editor Section -->
+            <section class="code-editor">
+                <div class="editor-header">
+                    <select id="language-switcher">
+                        <option value="c">C</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                    </select>
+                    <h3>Code Editor</h3>
+                </div>
+
+                <!-- Display selected exercise details -->
+                <div class="exercise-details">
+                    <h3 id="exercise-title">Exercise Title</h3>
+                    <p id="exercise-description">Exercise description and constraints will appear here...</p>
+                </div>
+
+                <!-- Code editor area -->
+                <div class="code-editor-wrapper">
+                    <div id="line-numbers" class="line-numbers"></div>
+                    <textarea id="code-editor" spellcheck="false" placeholder="// Write your code here..."></textarea>
+                </div>
+                                                 
+            
+                <!-- Predefined test cases section -->
+                <div class="output-container">
+                    <h3>Predefined Test Cases</h3>
+                    <ul id="test-cases">
+                        <li>
+                            <p><strong>Input:</strong> 4, 5</p>
+                            <p><strong>Expected Output:</strong> 9</p>
+                        </li>
+                        <li>
+                            <p><strong>Input:</strong> 7, 2</p>
+                            <p><strong>Expected Output:</strong> 9</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="button-container">
+                    <button id="run-button">Run Code</button>
+                    <button id="clear-button">Clear Code</button>
+                    <button id="submit-button">Submit</button>
+                    <button id="save-progress-button">Save Progress</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2024 Programming Exercises Platform. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
