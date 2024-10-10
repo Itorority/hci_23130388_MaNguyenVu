@@ -21,11 +21,14 @@ header {
 }
 
 header h1 {
-    margin: 0;
-    font-size: 3em;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    background: #2c3e50; /* Darker shade for contrast */
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Softer shadow */
 }
 
 /* Navigation Bar */
@@ -161,6 +164,10 @@ body.lab-page {
 .container.lab-content {
     flex: 1; /* Take up remaining space */
 }
+.container.lab-content h1 {
+    display: flex;
+    justify-content: center;
+}
 
 footer.lab-footer {
     margin-top: auto; /* Push footer to the bottom */
@@ -216,5 +223,94 @@ footer.lab-footer {
 .cta {
     text-align: center;
     margin: 40px 0;
+}
+/* Styles for Login Form */
+.login-container {
+    width: 100%;
+    max-width: 400px; /* Limit max-width for better responsiveness */
+    margin: 50px auto; /* Centering the login form */
+    padding: 40px; /* Adjusted padding for better spacing */
+    background-color: #fff; /* White background to contrast the gradient */
+    border-radius: 15px; /* Rounded corners to match the container style */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Soft shadow consistent with container */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+.login-container:hover {
+    transform: translateY(-5px); /* Lift on hover to match container */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.login-container h2 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1em;
+    color: #34495e;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Slightly rounded input fields */
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #16a085;
+    outline: none;
+    box-shadow: 0 0 5px rgba(22, 160, 133, 0.5); /* Focus shadow effect */
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #16a085;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1abc9c;
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    color: #16a085;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #1abc9c;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+    }
 }
 
