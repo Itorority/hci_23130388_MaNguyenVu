@@ -313,4 +313,69 @@ footer.lab-footer {
         width: 90%;
     }
 }
+/* Home Page Specific Styles */
+.hero {
+    text-align: center;
+    margin: 40px 0;
+}
 
+.hero h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+/* Adjusted button styles */
+.hero .btn {
+    max-width: 200px; /* Limit the max width */
+    background: #16a085; /* Match the Labs tab color */
+    color: white;
+    padding: 10px 20px; /* Adjusted padding */
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    display: inline-block; /* Allow for width control */
+}
+
+/* Button Styles */
+.hero .btn, .cta .btn {
+    background: #16a085; /* Match the Labs tab color */
+    color: white;
+    padding: 10px 20px; /* Reduced padding */
+    border-radius: 30px; /* Rounded corners */
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font-size: 1em; /* Adjust font size */
+    max-width: 250px; /* Limit the button width */
+    margin: 10px auto; /* Center the buttons with auto margins */
+    display: inline-block; /* Make the button inline-block for centering */
+}
+
+.hero .btn:hover, .cta .btn:hover {
+    background: #1abc9c; /* Slightly lighter on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero .btn {
+        width: 90%; /* Full width for smaller screens */
+    }
+
+    .features {
+        flex-direction: column; /* Stack features on smaller screens */
+    }
+
+    .feature-item {
+        width: 90%; /* Make feature items responsive */
+        margin: 10px auto; /* Center items */
+    }
+}
