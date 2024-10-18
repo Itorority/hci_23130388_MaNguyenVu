@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+    <style>
+        .logo h2 a {
+            text-decoration: none;
+            color: inherit; 
+        }
+
+        .logo h2 a:hover {
+            text-decoration: none; 
+        }
+    </style>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" role="navigation" aria-label="Main Navigation">
+            <div class="logo">
+                <h2><a href="lab3.html">My Drive</a></h2>
+            </div>
+            <ul class="nav">
+                <li><a href="filesharing.html" class ="active" aria-label="My Files">My Files</a></li>
+                <li><a href="sharedfile.html" aria-label="Shared with me">Shared with me</a></li>
+                <li><a href="recent.html" aria-label="Recent">Recent</a></li>
+                <li><a href="trash.html" aria-label="Trash">Trash</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="header">
+                <h1><div id="subject-title">Computer Science</div></h1>
+                <div style="display: flex; align-items: center;">
+                    <input type="text" class="search" placeholder="Search..." aria-label="Search files">
+                    <button type="button" class="upload-btn">Upload Files</button>
+                    <button id="back-button" class="back-button hidden" type="button" onclick="loadMyFiles()">Back to My Files</button>
+                </div>
+            </header>
+
+            <!-- Subject Switching Links -->
+            <div class="subject-links" id="subject-links">
+                <a href="mathematics.html" class="subject-link">Mathematics</a>
+                <a href="chemistry.html" class="subject-link">Chemistry</a>
+                <a href="english.html" class="subject-link">English</a>
+                <a href="computer_science.html" class="subject-link active">Computer Science</a> <!-- Active link -->
+                <a href="physics.html" class="subject-link">Physics</a>
+            </div>             
+
+            <!-- Computer Science Section -->
+            <section class="math-files-grid" id="cs-files-grid">
+                <div class="math-file-item folder">
+                    <h3>Bài Giảng</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=programming_fundamentals">Programming Fundamentals</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=data_structures">Data Structures</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=algorithms">Algorithms</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=databases">Database Management Systems</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=web_development">Web Development Basics</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=software_engineering">Software Engineering Principles</a></li>
+                    </ul>
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Bài Tập</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=programming_fundamentals_exercises">Programming Fundamentals Exercises</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=data_structures_exercises">Data Structures Exercises</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=algorithms_exercises">Algorithms Exercises</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=databases_exercises">Database Exercises</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=web_development_exercises">Web Development Exercises</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=software_engineering_exercises">Software Engineering Exercises</a></li>
+                    </ul>
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Tham Khảo</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=programming_fundamentals_references">Programming Fundamentals References</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=data_structures_references">Data Structures References</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=algorithms_references">Algorithms References</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=databases_references">Database References</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=web_development_references">Web Development References</a></li>
+                        <li><a href="lesson.html?from=computer_science.html&lessonId=software_engineering_references">Software Engineering References</a></li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

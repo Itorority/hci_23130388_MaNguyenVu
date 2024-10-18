@@ -1,0 +1,343 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0; /* Softer white for better readability */
+    font-size: 16px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5); /* Shadow effect for depth */
+} 
+
+.logo h2 {
+    color: #76c7c0; /* Accent color for the logo */
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 40px; /* Increased margin for spacing */
+    font-size: 24px;
+    text-transform: uppercase; /* Capitalize logo */
+}
+
+.nav {
+    list-style: none;
+}
+
+.nav li {
+    margin-bottom: 15px; /* Spacing between menu items */
+}
+
+.nav li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+    border-radius: 10px; /* Increased roundness for a softer look */
+    background-color: #333333;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s; /* Added shadow transition */
+}
+
+.nav li a:hover {
+    background-color: #444444; /* Slightly lighter on hover */
+    transform: translateX(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    color: #76c7c0;
+}
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 30px;
+    background-color: #181818;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Space between search box and buttons */
+    margin-bottom: 40px;
+}
+
+.header .search {
+    width: 300px; /* Fixed width for search */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #222; /* Search background */
+    color: #e0e0e0; /* Text color */
+    outline: none; /* Remove outline */
+    transition: background 0.3s; /* Transition for background change */
+}
+
+.header .search::placeholder {
+    color: #b0b0b0; /* Placeholder color */
+}
+
+.header .search:focus {
+    background-color: #2c2c2c; /* Darker on focus */
+}
+
+/* Button Styles */
+.upload-btn {
+    background-color: #76c7c0; /* Button color */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s; /* Button transition */
+    margin-left: 10px; /* Margin to space from the search box */
+    font-size: 18px;
+}
+
+.upload-btn:hover {
+    background-color: #45a049; /* Darker on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Back Button Styles */
+.back-button {
+    background-color: #76c7c0; /* Softer green */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Larger padding for better touch area */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s ease, transform 0.2s, box-shadow 0.2s; /* Transition for background change */
+    margin-left: 10px; /* Margin to space from the upload button */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    font-size: 18px;
+}
+
+.back-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Files Grid */
+.files-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust number of columns */
+    gap: 20px; /* Space between boxes */
+}
+
+/* File Item Styles */
+.file-item.folder {
+    background-color: #444; /* Background color for subject boxes */
+    border-radius: 5px; /* Rounded corners for the subject boxes */
+    overflow: hidden; /* To ensure child elements respect the border radius */
+    width: 200px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    display: flex; /* Use flexbox to center the link */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    margin: 0 auto; /* Center the boxes horizontally */
+}
+
+.file-item.folder a {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 15px; /* Adjust padding for better spacing */
+    color: white; /* Light text color */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.file-item.folder a:hover {
+    background-color: #555; /* Lighter background on hover */
+    color: #76c7c0; /* Change text color on hover */
+}
+
+/* Subject Title */
+.subject-title {
+    font-size: 20px; /* Increase title size */
+    font-weight: 700; /* Bold title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+/* Topic List */
+.topic-list {
+    margin-top: 10px; /* Space above the topic list */
+    padding-left: 15px; /* Indent topics */
+}
+
+/* Topic Styles */
+.topic {
+    font-size: 16px; /* Font size for topics */
+    margin-bottom: 5px; /* Space between topics */
+    transition: color 0.3s; /* Transition for text color */
+}
+
+.topic:hover {
+    color: #76c7c0; /* Change color on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.hidden {
+    display: none; /* Hides the button */
+}
+
+/* Updated Category Box Styles */
+.category-box {
+    background-color: #1e1e1e; /* Dark background for category box */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Padding inside the box */
+    margin-bottom: 20px; /* Space between category boxes */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Category Header Styles */
+.category-box h4 {
+    color: #76c7c0; /* Accent color for headers */
+    font-size: 18px; /* Font size for category header */
+    margin-bottom: 10px; /* Space below the header */
+    border-bottom: 1px solid #444; /* Underline effect */
+    padding-bottom: 5px; /* Padding for spacing */
+}
+
+/* Topic List Styles */
+.topic-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+/* Improved Topic Item Styles */
+.topic-item {
+    background-color: #292929; /* Dark background for topic items */
+    color: #ffffff; /* White text */
+    padding: 10px; /* Padding inside the box */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between topic items */
+    transition: background 0.3s, transform 0.2s; /* Transition effects */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* All Subjects Box Styles */
+.all-subjects-box {
+    display: flex; /* Flex for better alignment */
+    flex-direction: column; /* Column layout for items */
+    padding: 20px; /* Increased padding for a cleaner look */
+    background-color: #1e1e1e; /* Dark background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Deeper shadow for depth */
+}
+
+/* All Subjects Header Styles */
+.all-subjects-box h4 {
+    color: #76c7c0; /* Accent color for headers */
+    font-size: 20px; /* Larger font size for visibility */
+    margin-bottom: 15px; /* Space below the header */
+    border-bottom: 2px solid #444; /* Underline effect */
+    padding-bottom: 5px; /* Padding for spacing */
+}
+.math-files-grid {
+    display: grid; /* Use grid layout for the grid items */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between items */
+    margin-top: 20px; /* Space above the grid */
+}
+
+.math-file-item {
+    background-color: #333; /* Darker background for contrast */
+    border-radius: 8px; /* Slightly rounded corners */
+    padding: 20px; /* Padding inside each folder */
+    transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+    text-align: left; /* Align text to the left */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    color: #76c7c0; /* Text color */
+    text-decoration: none; /* No underline for links */
+    margin-bottom: 20px; /* Add space below each item */
+}
+
+
+/* Math Files List Box */
+.math-file-item ul {
+    list-style-type: none; /* Ensure bullet points are removed */
+    padding: 15px; /* Padding for the list */
+    background-color: #333; /* Dark background for contrast */
+    border-radius: 8px; /* Rounded corners for the list box */
+    margin-top: 15px; /* Space above the list */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+}
+
+/* Individual Math File Links */
+.math-file-item ul li {
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.25);
+    margin-bottom: 8px; /* Space between individual links */
+}
+
+.math-file-item ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #e0e0e0; /* Light text color for visibility */
+    display: block; /* Make the whole area clickable */
+    padding: 10px; /* Padding for the link area */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.math-file-item ul li a:hover {
+    background-color: #76c7c0; /* Accent color on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+/* Adding a smooth transition effect on the .math-file-item hover */
+.math-file-item:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+.subject-links {
+    display: block;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.subject-links a {
+    background-color: #4CAF50; /* Default background */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.subject-links a:hover {
+    background-color: #45a049;
+}   
+.subject-link.active {
+    background-color: darkgreen; /* Darker green color for active link */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to active link */
+    transform: scale(1.05); /* Slightly increase the size of the active link */
+    pointer-events: none;
+}
+.nav a.active {
+    color: white; /* Change to your preferred active color */
+    background-color: #76c7c0;
+    transform: translateX(5px);
+}
+.nav a.active:hover {
+    background-color: #76c7c0; /* Keep background unchanged */
+    color: inherit; /* Keep text color unchanged */
+    pointer-events: auto; /* Allow interaction, but no hover effect */
+    transition: none; /* No transition animation */
+}

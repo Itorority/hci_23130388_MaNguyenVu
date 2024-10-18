@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+    <style>
+        .logo h2 a {
+            text-decoration: none;
+            color: inherit; 
+        }
+
+        .logo h2 a:hover {
+            text-decoration: none; 
+        }
+    </style>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" role="navigation" aria-label="Main Navigation">
+            <div class="logo">
+                <h2><a href="lab3.html">My Drive</a></h2>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li><a href="filesharing.html" class ="active" aria-label="My Files">My Files</a></li>
+                    <li><a href="sharedfile.html" aria-label="Shared with me">Shared with me</a></li>
+                    <li><a href="recent.html" aria-label="Recent">Recent</a></li>
+                    <li><a href="trash.html" aria-label="Trash">Trash</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="header">
+                <h1 id="subject-title">Physics</h1>
+                <div class="header-actions">
+                    <input type="text" class="search" placeholder="Search..." aria-label="Search files">
+                    <button type="button" class="upload-btn">Upload Files</button>
+                    <button id="back-button" class="back-button hidden" type="button" onclick="loadMyFiles()">Back to My Files</button>
+                </div>
+            </header>
+            
+            <!-- Subject Switching Links -->
+            <div class="subject-links" id="subject-links">
+                <a href="mathematics.html" class="subject-link">Mathematics</a>
+                <a href="chemistry.html" class="subject-link">Chemistry</a>
+                <a href="english.html" class="subject-link">English</a>
+                <a href="computer_science.html" class="subject-link">Computer Science</a>
+                <a href="physics.html" class="subject-link active">Physics</a>
+            </div>            
+            
+            <!-- Content specific to Physics -->
+            <section class="math-files-grid" id="math-files-grid">
+                <div class="math-file-item folder">
+                    <h3>Bài Giảng</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=physics.html&lessonId=kinematics">Kinematics in One Dimension</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=forces">Forces and Newton's Laws</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=energy">Work and Energy</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=momentum">Momentum and Collisions</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=waves">Waves and Sound</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=electricity">Electromagnetism Basics</a></li>
+                    </ul>
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Bài Tập</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=physics.html&lessonId=kinematics_exercises">Kinematics Exercises</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=forces_exercises">Forces Exercises</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=energy_exercises">Work and Energy Exercises</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=momentum_exercises">Momentum Exercises</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=waves_exercises">Waves Exercises</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=electricity_exercises">Electromagnetism Exercises</a></li>
+                    </ul>
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Tham Khảo</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=physics.html&lessonId=kinematics_references">Kinematics References</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=forces_references">Forces References</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=energy_references">Work and Energy References</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=momentum_references">Momentum References</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=waves_references">Waves References</a></li>
+                        <li><a href="lesson.html?from=physics.html&lessonId=electricity_references">Electromagnetism References</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

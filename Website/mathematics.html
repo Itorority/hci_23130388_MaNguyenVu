@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+    <style>
+        .logo h2 a {
+            text-decoration: none;
+            color: inherit; 
+        }
+
+        .logo h2 a:hover {
+            text-decoration: none; 
+        }
+    </style>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" role="navigation" aria-label="Main Navigation">
+            <div class="logo">
+                <h2><a href="lab3.html">My Drive</a></h2>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li><a href="filesharing.html" class ="active" aria-label="My Files">My Files</a></li>
+                    <li><a href="sharedfile.html" aria-label="Shared with me">Shared with me</a></li>
+                    <li><a href="recent.html" aria-label="Recent">Recent</a></li>
+                    <li><a href="trash.html" aria-label="Trash">Trash</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="header">
+                <h1 id="subject-title">Mathematics</h1>
+                <div class="header-actions">
+                    <input type="text" class="search" placeholder="Search..." aria-label="Search files">
+                    <button type="button" class="upload-btn">Upload Files</button>
+                    <button id="back-button" class="back-button hidden" type="button" onclick="loadMyFiles()">Back to My Files</button>
+                </div>
+            </header>
+            
+            <!-- Subject Switching Links -->
+            <div class="subject-links" id="subject-links">
+                <a href="mathematics.html" class="subject-link active">Mathematics</a>
+                <a href="chemistry.html" class="subject-link">Chemistry</a>
+                <a href="english.html" class="subject-link">English</a>
+                <a href="computer_science.html" class="subject-link">Computer Science</a>
+                <a href="physics.html" class="subject-link">Physics</a>
+            </div>
+            
+            <!-- Content specific to Mathematics -->
+            <section class="math-files-grid" id="math-files-grid">
+                <div class="math-file-item folder">
+                    <h3>Bài Giảng</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=algebra_basics">Algebra Basics Lecture</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=geometry_basics">Geometry Basics Lecture</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=calculus_basics">Calculus Basics Lecture</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=linear_algebra">Linear Algebra Lecture</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=statistics_basics">Statistics Basics Lecture</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=number_theory">Number Theory Lecture</a></li>
+                    </ul>                    
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Bài Tập</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=algebra_basics_exercises">Algebra Exercises</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=geometry_basics_exercises">Geometry Exercises</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=calculus_basics_exercises">Calculus Exercises</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=linear_algebra_exercises">Linear Algebra Exercises</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=statistics_basics_exercises">Statistics Exercises</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=number_theory_exercises">Number Theory Exercises</a></li>
+                    </ul>
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Tham Khảo</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=algebra_basics_ref">Algebra References</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=geometry_basics_ref">Geometry References</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=calculus_basics_ref">Calculus References</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=linear_algebra_ref">Linear Algebra References</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=statistics_basics_ref">Statistics References</a></li>
+                        <li><a href="lesson.html?from=mathematics.html&lessonId=number_theory_ref">Number Theory References</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+    <style>
+        .logo h2 a {
+            text-decoration: none;
+            color: inherit; 
+        }
+
+        .logo h2 a:hover {
+            text-decoration: none; 
+        }
+    </style>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" role="navigation" aria-label="Main Navigation">
+            <div class="logo">
+                <h2><a href="lab3.html">My Drive</a></h2>
+            </div>
+            <ul class="nav">
+                <li><a href="filesharing.html" class ="active" aria-label="My Files">My Files</a></li>
+                <li><a href="sharedfile.html" aria-label="Shared with me">Shared with me</a></li>
+                <li><a href="recent.html" aria-label="Recent">Recent</a></li>
+                <li><a href="trash.html" aria-label="Trash">Trash</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="header">
+                <h1><div id="subject-title">Chemistry</div></h1>
+                <div style="display: flex; align-items: center;">
+                    <input type="text" class="search" placeholder="Search..." aria-label="Search files">
+                    <button type="button" class="upload-btn">Upload Files</button>
+                    <button id="back-button" class="back-button hidden" type="button" onclick="loadMyFiles()">Back to My Files</button>
+                </div>
+            </header>
+            
+            <!-- Subject Switching Links -->
+            <div class="subject-links" id="subject-links">
+                <a href="mathematics.html" class="subject-link">Mathematics</a>
+                <a href="chemistry.html" class="subject-link active">Chemistry</a>
+                <a href="english.html" class="subject-link">English</a>
+                <a href="computer_science.html" class="subject-link">Computer Science</a> <!-- Active link -->
+                <a href="physics.html" class="subject-link">Physics</a>
+            </div>   
+
+            <!-- Chemistry Section -->
+            <section class="math-files-grid" id="chemistry-files-grid">
+                <div class="math-file-item folder">
+                    <h3>Bài Giảng</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=atomic_structure">Atomic Structure</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=chemical_bonding">Chemical Bonding</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=stoichiometry">Stoichiometry</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=thermodynamics">Thermodynamics</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=chemical_kinetics">Chemical Kinetics</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=chemical_equilibrium">Chemical Equilibrium</a></li>
+                    </ul>
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Bài Tập</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=atomic_structure_exercises">Atomic Structure Exercises</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=chemical_bonding_exercises">Chemical Bonding Exercises</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=stoichiometry_exercises">Stoichiometry Exercises</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=thermodynamics_exercises">Thermodynamics Exercises</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=chemical_kinetics_exercises">Chemical Kinetics Exercises</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=chemical_equilibrium_exercises">Chemical Equilibrium Exercises</a></li>
+                    </ul>
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Tham Khảo</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=atomic_structure_references">Atomic Structure References</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=chemical_bonding_references">Chemical Bonding References</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=stoichiometry_references">Stoichiometry References</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=thermodynamics_references">Thermodynamics References</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=chemical_kinetics_references">Chemical Kinetics References</a></li>
+                        <li><a href="lesson.html?from=chemistry.html&lessonId=chemical_equilibrium_references">Chemical Equilibrium References</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

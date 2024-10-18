@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+    <style>
+        .logo h2 a {
+            text-decoration: none;
+            color: inherit; 
+        }
+
+        .logo h2 a:hover {
+            text-decoration: none; 
+        }
+    </style>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar" role="navigation" aria-label="Main Navigation">
+            <div class="logo">
+                <h2><a href="lab3.html">My Drive</h2>
+            </div>
+            <ul class="nav">
+                <li><a href="filesharing.html" class ="active" aria-label="My Files">My Files</a></li>
+                <li><a href="sharedfile.html" aria-label="Shared with me">Shared with me</a></li>
+                <li><a href="recent.html" aria-label="Recent">Recent</a></li>
+                <li><a href="trash.html" aria-label="Trash">Trash</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="header">
+                <h1><div id="subject-title">English</div></h1>
+                <div style="display: flex; align-items: center;">
+                    <input type="text" class="search" placeholder="Search..." aria-label="Search files">
+                    <button type="button" class="upload-btn">Upload Files</button>
+                    <button id="back-button" class="back-button hidden" type="button" onclick="loadMyFiles()">Back to My Files</button>
+                </div>
+            </header>
+
+            <!-- Subject Switching Links -->
+            <div class="subject-links" id="subject-links">
+                <a href="mathematics.html" class="subject-link">Mathematics</a>
+                <a href="chemistry.html" class="subject-link">Chemistry</a>
+                <a href="english.html" class="subject-link active">English</a>
+                <a href="computer_science.html" class="subject-link">Computer Science</a>
+                <a href="physics.html" class="subject-link">Physics</a>
+            </div>     
+            
+            <!-- English Section -->
+            <section class="math-files-grid" id="english-files-grid">
+                <div class="math-file-item folder">
+                    <h3>Bài Giảng</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=english.html&lessonId=grammar_basics">Grammar Basics</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=literature_intro">Introduction to Literature</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=writing_techniques">Writing Techniques</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=reading_reading_comprehension">Reading Comprehension</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=understanding_poetry">Understanding Poetry</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=rhetoric_persuasion">Rhetoric and Persuasion</a></li>
+                    </ul>
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Bài Tập</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=english.html&lessonId=grammar_exercises">Grammar Exercises</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=literature_exercises">Literature Exercises</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=writing_exercises">Writing Exercises</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=reading_exercises">Reading Exercises</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=poetry_exercises">Poetry Exercises</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=rhetoric_exercises">Rhetoric Exercises</a></li>
+                    </ul>
+                </div>
+                <div class="math-file-item folder">
+                    <h3>Tham Khảo</h3>
+                    <ul>
+                        <li><a href="lesson.html?from=english.html&lessonId=grammar_references">Grammar References</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=literature_references">Literature References</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=writing_references">Writing References</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=reading_references">Reading References</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=poetry_references">Poetry References</a></li>
+                        <li><a href="lesson.html?from=english.html&lessonId=rhetoric_references">Rhetoric References</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
