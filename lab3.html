@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Lab 3 - Website</title>
+    <title>Lab 2 - Website</title>
 </head>
 <body class="lab-page">
     <header>
@@ -16,10 +16,30 @@
     </header>
 
     <div class="container lab-content">
-        <h1>Lab 3</h1>
-        <p>This is the content of Lab 3.</p>
+        <h1>Lab 2</h1> 
+
+        <!-- Login Form Section -->
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="Website/filesharing.html" method="get">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p class="links">
+                    <a href="23130388_MaNguyenVu/forgot_password.html">Forgot Password?</a>
+                </p>
+                <p class="links">Don't have an account? <a href="23130388_MaNguyenVu/signup.html">Sign up here</a></p>
+            </form>
+        </div>
     </div>
 
+    <!-- Labs Section -->
     <section class="labs">
         <h2>Other Labs</h2>
         <ul>
