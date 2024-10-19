@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Dashboard</title>
+  <link rel="stylesheet" href="req1.css">
+</head>
+<body>
+
+  <div class="header">
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'BusinessOp')">Business Operations</button>
+        <button class="tablinks" onclick="openCity(event, 'CloudCom')">Cloud Computing</button>
+        <button class="tablinks" onclick="openCity(event, 'Cybersecurity')">Cybersecurity</button>
+        <button class="tablinks" onclick="openCity(event, 'DataScience')">Data Science</button>
+        <button class="tablinks" onclick="openCity(event, 'Development')">Development</button>
+        <button class="tablinks" onclick="openCity(event, 'ITOp')">IT Operations</button>
+        <button class="tablinks" onclick="openCity(event, 'LanguageLearning')">Language Learning</button>
+        <button class="tablinks" onclick="openCity(event, 'Leadership&Management')">Leadership & Management</button>
+        <button class="tablinks" onclick="openCity(event, 'Marketing')">Marketing</button>
+      </div>
+  </div>
+
+  <div class="welcome">
+    <img src="image/pngtree-nature-background-sunset-wallpaer-with-beautiful-flower-farms-image_2592160.jpg" alt="Profile Picture" class="profile-image">
+    <div class="welcome-text">
+      <h2>Welcome back, Ma Nguyen Vu</h2>
+      <p>Your Occupation: Software Developer</p>
+      <a href="#">Add occupation and interests</a>
+    </div>
+  </div>
+
+  <section class="streak">
+    <article>
+      <h3>Weekly streak</h3>
+      <p>One ring down, one to go. Keep it up!</p>
+    </article>
+
+    <article class="progress-circle">
+      <img src="/image/istockphoto-1323529010-612x612.jpg" alt="Progress Image" class="progress-image">
+      <div class="progress-text">
+        <span>2 weeks</span>
+        <p>Current streak</p>
+      </div>
+    </article>
+
+    <article class="progress-circle">
+      <img src="/image/progress-cricle.png" alt="Progress Image" class="progress-image">
+      <div class="progress-text">
+        <span><span class="orange-dot"></span> 11/30 course min</span>
+        <p><span class="green-dot"></span> 4/1 visit<br>Oct 13 - 19</p>
+        <a href="#">See all activity</a>
+      </div>
+    </article>
+    
+</section>
+
+<div class="learning">
+    <div class="learning-header">
+        <h3>Pick up where you left off</h3>
+        <a href="#">My learning</a>
+    </div>
+    <hr> <!-- Horizontal line below the header -->
+    <div class="learning-tabs">
+        <button class="tablinks" onclick="openTab(event, 'Courses')">Courses</button>
+        <button class="tablinks" onclick="openTab(event, 'LearningPaths')">Learning paths</button>
+        <button class="tablinks" onclick="openTab(event, 'CertPrep')">Certification preparation</button>
+    </div>
+    <div class="courses">
+        <div class="course-card">
+            <img src="/image/run1.png" alt="Course Image" class="course-image">
+            <div class="course-info">
+                <h3>1. Introduction</h3>
+                <p>FPT_ISMS Refresh Training S2 2024</p>
+                <p>Lecture • 1m</p>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="/image/run2.png" alt="Course Image" class="course-image">
+            <div class="course-info">
+                <h3>2. Integration Introduction</h3>
+                <p>MuleSoft 4.X Complete Guide</p>
+                <p>Lecture • 6m left</p>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="/image/run3.png" alt="Course Image" class="course-image">
+            <div class="course-info">
+                <h3>7. Quiz and Questions</h3>
+                <p>English Vocabulary: 504 Essential Words</p>
+                <p>Quiz • 9 questions</p>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<script src="/javascript/script.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
