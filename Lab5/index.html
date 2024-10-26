@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning</title>
+    <link rel="stylesheet" href="lab5.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">My Learning
+            <div class="stats">87hr 36min watched ⓘ <a href="#" class="activity-link">View all activity</a></div>
+
+            <div class="nav">
+                <div class="tab active" onclick="showSection('allCourses')">All Courses</div>
+                <div class="tab" onclick="showSection('learningPath')">Learning Paths</div>
+                <div class="tab" onclick="showSection('certifications')">Certifications</div>
+                <div class="tab" onclick="showSection('archived')">Archived</div>
+                <div class="tab" onclick="showSection('learningTools')">Learning Tools</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <div class="filter-item">
+                <label for="sort">Sort by:</label>
+                <select id="sort" class="filter-btn">
+                    <option>Recently Accessed</option>
+                </select>
+            </div>
+        
+            <div class="filter-label">Filter by:</div>
+        
+            <div class="filter-container">
+                <div class="filter-item">
+                    <select id="categories" class="filter-btn">
+                        <option>Categories</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <select id="progress" class="filter-btn">
+                        <option>Progress</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <select id="instructor" class="filter-btn">
+                        <option>Instructor</option>
+                    </select>
+                </div>
+                <!-- Add Reset Button -->
+                <button class="reset-btn">Reset Filters</button>
+            </div>
+        
+            <input type="text" class="search-bar" placeholder="Search my courses">
+        </div>
+        
+        <div class="course-grid">
+            <!-- Course Card 1 -->
+            <div class="course-card">
+                <img src="/image_lab5/security.png" alt="Information Security Management System" class="course-image">
+                <div class="course-title">FPT_ISMS Refresh Training S2 2024 (Vietnamese)</div>
+                <div class="course-instructor">FSOFT Content Development</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+                <div class="rating">85% complete ★★★★☆</div>
+            </div>
+        
+            <!-- Course Card 2 -->
+            <div class="course-card">
+                <img src="/image_lab5/spring.png" alt="Spring Boot Development Bootcamp" class="course-image">
+                <div class="course-title">The Complete Spring Boot Development Bootcamp</div>
+                <div class="course-instructor">Learn The Part Inc, Rayan Slim, Jose...</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 72%;"></div>
+                </div>
+                <div class="rating">72% complete ★★★★☆</div>
+            </div>
+        
+            <!-- Course Card 3 -->
+            <div class="course-card">
+                <img src="/image_lab5/muleSoft.png" alt="MuleSoft Complete Guide" class="course-image">
+                <div class="course-title">MuleSoft 4.X Complete Guide For Beginners - Hands On...</div>
+                <div class="course-instructor">Chinna Reddy</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 15%;"></div>
+                </div>
+                <div class="rating">15% complete ★★★★☆</div>
+            </div>
+        
+            <!-- Course Card 4 -->
+            <div class="course-card">
+                <img src="/image_lab5/english.png" alt="English Vocabulary" class="course-image">
+                <div class="course-title">English Vocabulary: 504 Essential Words through 7...</div>
+                <div class="course-instructor">Mister Rabbely</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 43%;"></div>
+                </div>
+                <div class="rating">43% complete ★★★★☆</div>
+            </div>
+        
+            <!-- Course Card 5 -->
+            <div class="course-card">
+                <img src="/image_lab5/REST.png" alt="Build a Backend" class="course-image">
+                <div class="course-title">Build a Backend REST API with Python & Java</div>
+                <div class="course-instructor">Maker Honesty</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 29%;"></div>
+                </div>
+                <div class="rating">29% complete ★★★★☆</div>
+            </div>
+        
+            <!-- Course Card 6 -->
+            <div class="course-card">
+                <img src="/image_lab5/chatgpt.png" alt="ChatGPT Python Programming" class="course-image">
+                <div class="course-title">ChatGPT Python Programming</div>
+                <div class="course-instructor">Indonesia Founder</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;"></div>
+                </div>
+                <div class="rating">60% complete ★★★★☆</div>
+            </div>
+        </div>     
+
+        <div class="section" id="learningPath" style="display:none;">
+            <h2>Learning Paths</h2>
+            <p>Explore various learning paths to reach your goals.</p>
+            <a href="learningPath.html">Go to Learning Path Page</a>
+        </div>
+</body>
+</html>
