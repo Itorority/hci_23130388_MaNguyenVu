@@ -12,6 +12,7 @@ body {
 }
 
 .header {
+    position: relative;
     background-color: #333;
     color: white;
     padding: 20px;
@@ -371,4 +372,18 @@ body {
     .learning-logo {
         width: 80px; /* Smaller logo */
     }
+}
+.return-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 12px;
+    color: #ffffff;
+    background-color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.return-btn:hover {
+    background-color: #0056b3;
 }
