@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning - Learning Paths</title>
+    <link rel="stylesheet" href="lab5.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <span class="title">My Learning</span>
+            <div class="stats">87hr 36min watched ⓘ <a href="#" class="activity-link">View all activity</a></div>
+
+            <div class="nav">
+                <div class="tab" onclick="showSection('allCourses')">All courses</div>
+                <div class="tab active" onclick="showSection('learningPath')">Learning paths</div>
+                <div class="tab" onclick="showSection('certifications')">Certifications</div>
+                <div class="tab" onclick="showSection('archived')">Archived</div>
+                <div class="tab" onclick="showSection('learningTools')">Learning tools</div>
+            </div>
+        </div>
+
+        <div class="learning-paths">
+            <!-- Learning Path Card 1 -->
+            <div class="learning-card">
+                <img src="../Lab5/image_lab5/fpt.png" alt="Logo" class="learning-logo">
+                <div class="learning-info">
+                    <p class="learning-type">Learning path</p>
+                    <p class="learning-title">Induction Training_GAAFOFY (VI)</p>
+                    <p class="learning-progress">1 of 6 items complete</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 16%;"></div>
+                    </div>
+                </div>
+                <!-- Menu Button -->
+                <div class="menu-button">
+                    <i class="fas fa-ellipsis-v"></i>
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu" style="display: none;">
+                        <div class="menu-item">Edit</div>
+                        <div class="menu-item">Delete</div>
+                        <div class="menu-item">Share</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Path Card 2 -->
+            <div class="learning-card">
+                <img src="../Lab5/image_lab5/fpt.png" alt="Logo" class="learning-logo">
+                <div class="learning-info">
+                    <p class="learning-type">Learning path</p>
+                    <p class="learning-title">Induction Training for BO_IT_Mandatory (VI)</p>
+                    <p class="learning-progress">9 of 9 items complete</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <!-- Menu Button -->
+                <div class="menu-button">
+                    <i class="fas fa-ellipsis-v"></i> 
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu" style="display: none;">
+                        <div class="menu-item">Edit</div>
+                        <div class="menu-item">Delete</div>
+                        <div class="menu-item">Share</div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="section" id="allCourses" style="display: none;">
+            <h2>All Courses</h2>
+            <p>Explore various learning paths to reach your goals.</p>
+            <a href="index.html"></a>
+        </div>
+        <div class="section" id="learningPath" style="display: none;">
+            <h2>Learning Paths</h2>
+            <p>Explore various learning paths to reach your goals.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle menu visibility
+        function toggleMenu(menuButton) {
+            let dropdown = menuButton.querySelector('.dropdown-menu');
+            
+            // Toggle visibility
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        // Add event listeners to all menu buttons
+        function addMenuListeners() {
+            const menuButtons = document.querySelectorAll('.menu-button');
+            
+            menuButtons.forEach(menuButton => {
+                menuButton.addEventListener('click', (event) => {
+                    event.stopPropagation(); // Prevent click event from bubbling
+                    toggleMenu(menuButton);  // Function to toggle menu visibility
+                });
+            });
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            const dropdowns = document.querySelectorAll('.dropdown-menu');
+            dropdowns.forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+        });
+
+        // Call addMenuListeners function on page load
+        document.addEventListener('DOMContentLoaded', addMenuListeners);
+    </script>
+</body>
+</html>
