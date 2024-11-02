@@ -1,0 +1,184 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-title {
+    color: white;
+    background-color: #007bff;
+    padding: 10px;
+    margin: 0;
+    font-size: 20px;
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Reduce gap to fit all columns */
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1 1 30%; /* Set width to 30% to comfortably fit three columns with spacing */
+    box-sizing: border-box; /* Ensures padding is included within width calculation */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 10px); /* Switch to two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%; /* Switch to a single column on very small screens */
+    }
+}
+
+.card img {
+    width: 40px;          /* Set a fixed width */
+    height: 40px;         /* Set a fixed height */
+    object-fit: cover;    /* Ensures the image covers the dimensions while maintaining aspect ratio */
+    margin-bottom: 10px;  /* Space below the image */
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 8px 12px;
+    margin: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-continue {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-guide {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.btn-continue:hover {
+    background-color: #0056b3;
+}
+
+.btn-guide:hover {
+    background-color: #c0c0c0;
+}
+
+.tag {
+    background: #333;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.form-container {
+    padding: 30px; /* Increased padding for more spacious layout */
+    background-color: #ffffff; /* Set a white background for contrast */
+    border-radius: 8px; /* Slightly more rounded corners */
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border: 1px solid #e0e0e0; /* Light border for definition */
+}
+/* Additional styles for input fields */
+.input-group {
+    margin-top: 15px;
+    display: flex; 
+    flex-direction: column; /* Align children in a column */
+    margin-bottom: 15px; 
+    border: 1px solid #dfdede; /* Add border around the input group */
+    border-radius: 4px; /* Slightly rounded corners */
+    padding: 15px; /* Padding inside the border for spacing */
+    background-color: #f9f9f9; /* Light background for the input group */
+}
+
+.label-and-input {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.label-text {
+    margin-right: 10px; 
+    font-weight: bold; 
+    color: #333;
+    width: 150px; 
+}
+
+.input-field {
+    flex: 1; /* Makes input field fill the available space */
+    padding: 10px; /* Slightly increased padding for comfort */
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    transition: border-color 0.3s; /* Transition effect for border color */
+}
+
+/* Input field focus effect */
+.input-field:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+}
+
+.open-ide-button {
+    text-align: center;
+    padding: 12px 362px; /* Increased padding for better click area */
+    background-color: #007bff; /* Match button color with continue button */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: background-color 0.3s; /* Transition for background color */
+    display: inline-block; /* Ensures the button behaves like a block element */
+}
+
+/* Button hover effect */
+.open-ide-button:hover {
+    background-color: #0056b3; 
+}
+
+/* JavaScript-controlled visibility */
+.hidden {
+    display: none;
+}

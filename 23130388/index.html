@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Test Custom Challenge</title>
+    <link rel="stylesheet" href="lab6.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <!-- First Screen -->
+    <div class="modal" id="challenge-selection">
+        <h2 class="modal-title">New unit test custom challenge</h2>
+        <div class="card-grid">
+            <!-- JavaScript Mocha -->
+            <div class="card">
+                <img src="image/JavaScript.png" alt="Mocha">
+                <h3>JavaScript <span class="tag">Mocha</span></h3>
+                <p>Use the Mocha testing framework and create unit tests to grade solutions.</p>
+                <div class="button-group">
+                    <button class="btn btn-continue" onclick="showForm()">Continue</button>
+                    <button class="btn btn-guide">Guide</button>
+                </div>
+            </div>
+
+            <!-- TypeScript Mocha -->
+            <div class="card">
+                <img src="image/typeScript.png" alt="TypeScript">
+                <h3>TypeScript <span class="tag">Mocha</span></h3>
+                <p>Use the Mocha testing framework and create unit tests to grade solutions.</p>
+                <div class="button-group">
+                    <button class="btn btn-continue" onclick="showForm()">Continue</button>
+                    <button class="btn btn-guide">Guide</button>
+                </div>
+            </div>
+
+            <!-- Python Pytest -->
+            <div class="card">
+                <img src="image/python.png" alt="Pytest">
+                <h3>Python <span class="tag">pytest</span></h3>
+                <p>pytest is the most popular and fully-featured Python testing framework.</p>
+                <div class="button-group">
+                    <button class="btn btn-continue" onclick="showForm()">Continue</button>
+                    <button class="btn btn-guide">Guide</button>
+                </div>
+            </div>
+
+            <!-- PHP Unit -->
+            <div class="card">
+                <img src="image/php.png" alt="Pytest">
+                <h3>PHP <span class="tag">PHPUnit</span></h3>
+                <p>PHPUnit is a programmer-oriented testing framework for PHP</p>
+                <div class="button-group">
+                    <button class="btn btn-continue" onclick="showForm()">Continue</button>
+                    <button class="btn btn-guide">Guide</button>
+                </div>
+            </div>
+
+            <!-- Java JUnit -->
+            <div class="card">
+                <img src="image/java.png" alt="Pytest">
+                <h3>Java <span class="tag">JUnit</span></h3>
+                <p>JUnit is a popular unit-testing framework in the Java ecosystem</p>
+                <div class="button-group">
+                    <button class="btn btn-continue" onclick="showForm()">Continue</button>
+                    <button class="btn btn-guide">Guide</button>
+                </div>
+            </div>
+
+            <!-- Kotlin JUnit -->
+            <div class="card">
+                <img src="image/kotlin.png" alt="Pytest">
+                <h3>Kotlin <span class="tag">JUnit</span></h3>
+                <p>JUnit is a popular unit-testing framework in the Kotlin ecosystem</p>
+                <div class="button-group">
+                    <button class="btn btn-continue" onclick="showForm()">Continue</button>
+                    <button class="btn btn-guide">Guide</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-container hidden" id="challenge-form">
+        <h2 class="modal-title">New unit test custom challenge</h2>
+    
+        <div class="input-group">
+            <input type="text" id="demo" class="input-field" value="Demo" />
+        </div>
+    
+        <div class="input-group">
+            <div class="label-and-input">
+                <label for="difficulty" class="label-text">Difficulty:</label>
+                <select id="difficulty" class="input-field">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            
+            <div class="label-and-input">
+                <label for="description" class="label-text">Short Description:</label>
+                <input type="text" id="description" class="input-field" />
+            </div>
+        </div>
+    
+        <a href="#" class="open-ide-button">Click here to open the Java (JUnit) IDE and edit your code</a>
+    </div>
+    
+    
+</div>
+</body>
+</html>
