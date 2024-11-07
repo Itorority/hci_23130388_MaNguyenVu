@@ -12,6 +12,165 @@ body {
     color: #d4d4d4;
 }
 
+/* Moderate trigger area */
+#nav-trigger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px; /* Moderate height to make it accessible */
+    z-index: 5;
+    opacity: 0; /* Invisible but hoverable */
+    pointer-events: auto; /* Allows hovering */
+}
+
+/* Initially hide nav off-screen */
+nav {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #34495e;
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: -100px; /* Start off-screen */
+    left: 0;
+    right: 0;
+    opacity: 0; /* Fully transparent */
+    transition: top 0.4s ease, opacity 0.4s ease; /* Smooth transition */
+    z-index: 10; /* Ensure it appears above content */
+}
+
+/* Make nav visible when hovering over #nav-trigger or nav itself */
+#nav-trigger:hover + nav,
+nav:hover {
+    top: 0; /* Slide into view */
+    opacity: 1; /* Make visible */
+}
+
+/* Links */
+.nav-links {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.auth-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* Logo and Brand Name Alignment */
+nav .logo {
+    display: flex;
+    align-items: center;
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+/* Logo Image */
+nav .logo img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+nav .logo:hover {
+    transform: none;
+    background: none;
+}
+
+nav .logo .logo-text {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #ecf0f1;
+}
+
+/* Navigation Links */
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+/* Hover effect for links */
+nav a:hover {
+    background: #1abc9c;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Active tab styling */
+nav a.active, .labs a.active {
+    background: #ffffff;
+    color: #2c3e50;
+    font-weight: bold;
+    border: 2px solid #16a085;
+    box-shadow: 0 4px 15px rgba(26, 188, 156, 0.3);
+    cursor: pointer;
+    transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .logo {
+        margin: 10px 0;
+    }
+
+    nav a {
+        margin: 5px 0;
+        padding: 8px 12px;
+    }
+    .nav-links, .auth-links {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+}
+
+/* Auth links styles */
+.auth-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.auth-links .login-btn, .auth-links .signup-btn {
+    padding: 10px 15px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.auth-links .login-btn:hover, .auth-links .signup-btn:hover {
+    background: #1abc9c;
+    color: #fff;
+}
+
+.auth-links .signup-btn {
+    padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+    .auth-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .auth-links .signup-btn, .auth-links .login-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* Main container */
 .container {
     width: 90%;
@@ -39,11 +198,14 @@ header h1 {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    background: #ff4d4d; /* Red background */
+    background: #ff4d4d;
     color: white;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
-    margin-left: 20px; /* Space between button and title */
+    margin-right: 20px;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 #return-login:hover {
