@@ -3,6 +3,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-y: scroll; 
+    scrollbar-width: none;
 }
 
 body {
@@ -34,20 +36,71 @@ header h1 {
 /* Navigation Bar */
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center logo and links vertically */
     background: #34495e;
+    padding: 0 20px; /* Adds space to avoid edge overflow */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-nav a {
+.nav-links {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1; /* Allows this section to take up remaining space */
+    justify-content: center; /* Centers items within this section */
+}
+
+.auth-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* Logo and Brand Name Alignment */
+nav .logo {
+    display: flex;
+    align-items: center;
     color: #ecf0f1;
     text-decoration: none;
-    padding: 15px 20px;
+}
+
+/* Logo Image */
+nav .logo img {
+    border-radius: 50%; /* Circular logo */
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+nav .logo:hover {
+    transform: none; /* Reset transform on hover */
+    background: none;
+}
+
+nav .logo .logo-text {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #ecf0f1;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 15px;
     margin: 0 10px;
-    border-radius: 30px; /* Rounded buttons for a modern look */
+    border-radius: 30px;
     transition: all 0.4s ease;
 }
 
+/* Navigation Links */
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    transition: all 0.2s ease;
+}
+
+/* Hover Effect for Links */
 nav a:hover {
     background: #1abc9c;
     color: #fff;
@@ -61,8 +114,80 @@ nav a.active, .labs a.active {
     font-weight: bold;
     border: 2px solid #16a085;
     box-shadow: 0 4px 15px rgba(26, 188, 156, 0.3); /* Soft shadow */
-    cursor:cell;
+    cursor: pointer;
     transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Center align items for smaller screens */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .logo {
+        margin: 10px 0;
+    }
+
+    nav a {
+        margin: 5px 0;
+        padding: 8px 12px;
+    }
+    .nav-links, .auth-links {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+}
+
+/* Additional Styles for Signup and Login Links */
+
+/* Auth Links (Signup and Login) */
+.auth-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Login Button Style */
+.auth-links .login-btn {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.auth-links .login-btn:hover {
+    background: #1abc9c;
+    color: #fff;
+}
+
+/* Signup Button Style */
+.auth-links .signup-btn {
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.auth-links .signup-btn:hover {
+    background: #1abc9c;
+    color: #fff;
+}
+
+/* Responsive Adjustments for Auth Links */
+@media (max-width: 768px) {
+    .auth-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .auth-links .signup-btn, .auth-links .login-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* Main Content Container */
