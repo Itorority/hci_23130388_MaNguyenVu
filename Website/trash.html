@@ -21,28 +21,34 @@
             height: auto;
             margin-top: 10px; /* Adds space between the text and image */
         }
-
-        .empty-text {
-            font-size: 70px;
-            font-weight: 700;
-            color: #333;
-        }
-        .logo h2 a {
-        text-decoration: none;
-        color: inherit; 
-        }
-
-        .logo h2 a:hover {
-            text-decoration: none; 
-        }
     </style>
 </head>
 <body>
+        <!-- Expanded trigger area for nav -->
+        <div id="nav-trigger"></div>
+
+        <nav id="main-nav">
+            <div class="logo-container">
+                <a href="../index.html" class="logo-link">
+                    <img src="../image/image.png" alt="Logo" width="40" height="40" class="logo-image">
+                    <span class="logo-text">muCk</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html" class="nav-item">Home</a>
+                <a href="../about.html" class="nav-item">About</a>
+                <a href="../labs.html" class="nav-item">Labs</a>
+            </div>
+            <div class="auth-menu">
+                <a href="../lab1.html" class="auth-item login-btn">Login</a>
+                <a href="../23130388_MaNguyenVu/signup.html" class="auth-item signup-btn">Sign Up</a>
+            </div>
+        </nav> 
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar" role="navigation" aria-label="Main Navigation">
             <div class="logo">
-                <h2><a href="../lab3.html">My Drive</a></h2>
+                <h2><a href="../lab3.html">Lab 3</a></h2>
             </div>
             <ul class="nav">
                 <li><a href="filesharing.html" onclick="loadMyFiles()" aria-label="My Files">My Files</a></li>
