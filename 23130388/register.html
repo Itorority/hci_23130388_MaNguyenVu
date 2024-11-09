@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Group Project</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Register</h1>
+        </header>
+
+        <div class="signup-container">
+            <form action="register.php" method="post" onsubmit="return validatePasswords();">
+                <div class="input-group">
+                    <label for="new-username">Username</label>
+                    <input type="text" id="new-username" name="username" placeholder="Enter your username" required aria-label="Username">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required aria-label="Email">
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone</label>
+                    <input type="phone" id="phone" name="phone" placeholder="Enter your phone number" required aria-label="Phone">
+                </div>
+                <div class="input-group">
+                    <label for="new-password">Password</label>
+                    <input type="password" id="new-password" name="password" placeholder="Enter your password" required aria-label="Password">
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required aria-label="Confirm Password">
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p class="links"><a href="#">Already have an account? Login here</a></p>
+            </form>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 23130388 - Group Project. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
